@@ -17,7 +17,16 @@ Our goals are to understand how web applications…
 
 This project is a bridge between smaller projects with Sinatra like WebGuesser and IdeaBox to Rails-based projects like Blogger and SalesEngine.
 
-##How To Deploy
+##Setup
+
+1. Clone the repo
+ ``` git clone git@github.com: MappingKat\BikeDepot ```
+
+2. Install gems 
+ ``` bundle ```
+
+
+##Deploying
 
 This is a Sinatra application with a rakefile. 
 
