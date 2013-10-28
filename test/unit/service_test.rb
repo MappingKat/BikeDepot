@@ -26,8 +26,28 @@ class ServiceTest < Minitest::Test
   def test_it_reads_a_service
     service = Service.all.first
     assert_equal "wheels", service.name
+    assert_equal "replace wheel", service.description
+    assert_equal 25, service.price
+    assert_equal "per wheel", service.price_details
   end
 
+  def test_it_deletes_a_service
+    service = Service.first.destroy 
+    assert_equal 0, Service.all.count
+  end
+
+  def test_it_updates_a_service
+    service = Service.all.first
+    assert_equal "wheels", service.name
+    service.update(:name => "dingle_donglers")
+    assert_equal "dingle_donglers", service.name
+  end
+
+  def test_it_can_find_by_attribute
+    current_id = Service.all.first.id
+    Service.all.first.update(:id => 8)
+    assert_equal current_id, Service.all.first.id
+  end
 
 end
 
