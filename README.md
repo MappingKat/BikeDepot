@@ -1,8 +1,8 @@
 #Bike Depot 
 
-Welcome to the Bike Depot Content Management System.  This project is a revision of the (Bike Depot).
+Welcome to the Bike Depot Content Management System!  This project is a revision of the [Bike Depot].
 
-[Homepage](https://github.com/MappingKat/raw/master/Home.png)
+[Homepage](https://github.com/MappingKat/BikeDepot/blob/master/Home.png)
 
 ![Bike Depot](http://www.thebikedepot.org/)
 
@@ -24,7 +24,7 @@ This is a Sinatra application with a rakefile.
 
 To deploy this app, please 
 
-```rackup```
+``` rackup ```
 
 Then go and visit your localhost at port 9292
 
