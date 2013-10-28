@@ -2,18 +2,18 @@
 
 Welcome to the Bike Depot Content Management System!  This project is a revision of the [Bike Depot].
 
-[Homepage](https://github.com/MappingKat/BikeDepot/blob/master/Home.png)
+![Homepage](https://raw.github.com/MappingKat/BikeDepot/master/Home.png)
 
-![Bike Depot](http://www.thebikedepot.org/)
+[Bike Depot]: http://www.thebikedepot.org/
 
 
 ##Learning Goals
 
 Our goals are to understand how web applications…
 
-* Receive requests and send responses with HTTP
-* Store data to and fetch data from a SQL database
-* Are built in a modular, object-oriented style
+[ ] Receive requests and send responses with HTTP
+[ ] Store data to and fetch data from a SQL database
+[ ] Are built in a modular, object-oriented style
 
 This project is a bridge between smaller projects with Sinatra like WebGuesser and IdeaBox to Rails-based projects like Blogger and SalesEngine.
 
