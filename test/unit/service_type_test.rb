@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/service_type'
 
-class ServiceTypeTest < Minitest::Test  
+class ServiceTypeTest < Minitest::Test
 
   def setup
     service_type_params = {:name => "wheels" }
@@ -13,7 +13,8 @@ class ServiceTypeTest < Minitest::Test
   end
 
   def teardown
-    ServiceType.all.destroy!
+    #ServiceType.all.destroy!
+    ServiceType.database.from(:service_types)
   end
 
   def test_it_creates_service_type
@@ -26,7 +27,7 @@ class ServiceTypeTest < Minitest::Test
   end
 
   def test_it_deletes_a_service_type
-    service_type = ServiceType.first.destroy 
+    service_type = ServiceType.first.destroy
     assert_equal 0, ServiceType.all.count
   end
 
@@ -42,6 +43,6 @@ class ServiceTypeTest < Minitest::Test
     current_id = service.id
     service.update(:id => 80)
     assert_equal current_id, service.id
-  end  
+  end
 end
 
