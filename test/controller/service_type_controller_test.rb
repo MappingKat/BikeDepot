@@ -32,10 +32,10 @@ class ServerTest < Minitest::Test
   end
 
   def test_it_updates_via_put
-    skip
-    put '/service_types/' + ser_type_id.to_s + '/edit', params={:service_type => {:name => "new name"}}
+    put '/service_types/' + ser_type_id.to_s + '/edit', :service_type => {:name => "new name"}
     assert last_response.redirect?, "route was not redirected"
-    puts last_response.body
+    follow_redirect!
+    assert last_response.ok?, "response should be okay"
     assert last_response.body.include?("new name"), "should include new name"
      # check here that the put route in the server file works.
   end

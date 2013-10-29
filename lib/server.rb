@@ -6,7 +6,7 @@ require 'pry'
 #config.ru should take care of these
 
 class BikeDepot < Sinatra::Base
-  #set :method_override, true
+  set :method_override, true
   configure :development do
     register Sinatra::Reloader
   end
@@ -35,9 +35,11 @@ class BikeDepot < Sinatra::Base
     erb :edit_service_types, locals: {service_type: ServiceTypes.find_all_by_id(id).first}
   end
 
-  put '/service_types/:id/edit' do |id|
+  put '/service_types/:id/update' do |id|
+    # binding.pry
     ServiceTypes.update(id,params[:service_type])
-    redirect '/service_types'
+    # binding.pry
+    redirect "/service_types"
   end
 
   post '/service_types' do 

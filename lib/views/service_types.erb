@@ -1,5 +1,12 @@
 <h1>Service Types</h1>
 
+      <form action='/service_types' method='POST'>
+
+      <label for="service_type[name]">Name:</label>
+      <textarea name='service_type[name]'></textarea>
+      <button type='submit' name='create_service_type'>Submit</button>
+
+
 <% if false %>
 
     <ul>
@@ -19,6 +26,7 @@
       <% service_types.each do |service_type| %>
         <li>
         <%= service_type.name %><br/>
+                <%= service_type.id %>
         </li>
       <% end %>
     </ul>

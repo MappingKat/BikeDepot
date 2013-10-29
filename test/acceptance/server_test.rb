@@ -48,16 +48,6 @@ class ServerTest < Minitest::Test
     assert page.has_content?("Wheels"), "page should list Wheels type"
   end
 
-  def test_service_type_edit_page_works
-    skip
-    visit '/service_types/' + ser_type_id.to_s + '/edit'
-    assert page.has_content?("Edit Service Types"), "should say edit service types"
-    assert page.has_content?("Wheels"), "page should have Wheels"
-    fill_in('service_types[name]', :with => "engine")
-    click_button('submit')
-    assert page.has_content?("engine"), "page should say engine"
-  end
-
   def test_service_edit_page_works
     skip
     visit '/services/edit'
