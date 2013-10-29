@@ -9,7 +9,17 @@ class Services
   end
 
   def self.find_all_by_name(search_term)
+    table_data = dataset.where(:name => search_term)
+    objects = table_data.map {|d| Service.new(d)}
+  end
 
+  def self.find_all_by_id(search_term)
+    table_data = dataset.where(:id => search_term)
+    objects = table_data.map {|d| Service.new(d)}
+  end
+
+  def self.update(id,params)
+    dataset.where(:id => id).update(params)
   end
 
   def self.dataset
@@ -17,7 +27,7 @@ class Services
   end
 
   def self.all
-
+    dataset.select.to_a.map {|data| Service.new(data)}
   end
 
   def self.database

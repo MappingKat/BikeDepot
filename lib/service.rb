@@ -1,6 +1,7 @@
 class Service
 
-  attr_reader :service_type_id,
+  attr_reader :id,
+              :service_type_id,
               :name,
               :description,
               :price,
@@ -12,6 +13,7 @@ class Service
     @description = attributes[:description]
     @price = attributes[:price]
     @price_details = attributes[:price_details]
+    @id = attributes[:id]
   end
 
   def to_h

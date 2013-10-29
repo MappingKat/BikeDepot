@@ -27,7 +27,7 @@ class ServiceTest < Minitest::Test
   def test_it_reads_a_service
     service = Services.find_all_by_name("wheels")
     assert_equal "wheels", service.first.name
-    assert_equal "replace wheel", service.service.description
+    assert_equal "replace wheel", service.first.description
     assert_equal 25, service.first.price
     assert_equal "per wheel", service.first.price_details
   end
