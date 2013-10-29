@@ -1,9 +1,11 @@
 <h1>Edit Service Types</h1>
 
-<form action='/service_types/#{service_type.id}/edit' method='POST'>
+<form action='/service_types/'+ service_type.id + '/edit' method='POST'>
 
     <input type="hidden" name="_method" value="PUT" />
-    <label for="service_types[name]">Name:</label>
-    <textarea name='service_types[name]'><%= service_type.name %></textarea>
+    <label for="service_type[name]">Name:</label>
+    <textarea name='service_type[name]'><%= service_type.name %></textarea>
+    <button type='submit' id='submit'>Submit</button>
+
 
 </form>

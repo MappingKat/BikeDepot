@@ -14,8 +14,6 @@ class ServerTest < Minitest::Test
   end
 
   def test_get_services_page_works
-    
-    skip
     get '/services'
     assert last_response.ok?, "getting '/services' should work"
   end

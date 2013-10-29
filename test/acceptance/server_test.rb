@@ -3,8 +3,11 @@ require_relative '../helpers/acceptance_helper'
 class ServerTest < Minitest::Test
   include Capybara::DSL
 
+  attr_reader :ser_type_id
+
   def setup
     ServiceTypes.save(:name => "Wheels")
+    @ser_type_id = ServiceTypes.find_all_by_name("Wheels").first.id
   end
 
   def teardown
@@ -30,6 +33,7 @@ class ServerTest < Minitest::Test
   end
 
   def test_service_type_page_works_for_guest
+    skip # come back after controllers tests
     visit '/service_types'
     assert page.has_content?("Service Types"), "service_types page should say Service Types!"
     assert page.has_content?("Wheels"), "page should list Wheels type"
@@ -45,9 +49,13 @@ class ServerTest < Minitest::Test
   end
 
   def test_service_type_edit_page_works
-    visit '/service_types/edit'
+    skip
+    visit '/service_types/' + ser_type_id.to_s + '/edit'
     assert page.has_content?("Edit Service Types"), "should say edit service types"
     assert page.has_content?("Wheels"), "page should have Wheels"
+    fill_in('service_types[name]', :with => "engine")
+    click_button('submit')
+    assert page.has_content?("engine"), "page should say engine"
   end
 
   def test_service_edit_page_works
