@@ -1,45 +1,41 @@
-require 'sinatra/base'
-require 'sinatra/flash'
-require 'digest/md5'
-require './lib/server' #need to check this
+require 'rubygems'
+require 'sinatra'
+require 'sinatra/reloader'
 
-module Sinatra
-  module Auth
-    module Helpers
+set :username,'Bond'
+set :token,'shakenN0tstirr3d'
+set :password,'007'
 
-    def authorized?
-      session[:personel]
-    end
-
-    def self.registered(app)
-        app.helpers Helpers
-
-        app.enable :sessions
-
-        app.get 'session/login' do
-          erb :login
-        end
-
-      app.post '/session/login' do
-        user = User.new
-        if user && user.password == login_try
-          session[:personel] = params[:username]
-          user.load_database
-          flash[:notice] = "You are loggin in as #{session[:persona].capitalize}"
-          redirect '/'
-        else 
-          flash[:error] = "The username or password you entered is not correct."
-          redirect to('session/login')
-        end
-      end
-
-      app.get '/session/logout' do
-        session[:personel] = nil
-        flash[:notice] = "You have now logged out."
-        redirect to ('/')
-      end
-    end
-
-  end
-  register Auth
+helpers do
+  def admin? ; request.cookies[settings.username] == settings.token ; end
+  def protected! ; halt [ 401, 'Not Authorized' ] unless admin? ; end
 end
+
+get '/' do
+  haml :index
+end
+
+get('/admin'){ haml :admin }
+
+post '/login' do
+  if params['username']==settings.username&&params['password']==settings.password
+    response.set_cookie(settings.username,settings.token) 
+    redirect '/'
+  else
+    "Username or Password incorrect"
+  end
+end
+
+get('/logout'){ response.set_cookie(settings.username, false) ; redirect '/' }
+
+get '/public' do
+  'Anyone can see this'
+end
+
+get '/private' do
+  protected!
+  'For Your Eyes Only!'
+end
+
+__END__
+
