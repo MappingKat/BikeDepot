@@ -41,5 +41,4 @@ class User
   def load_services
     Service.filename = "db/user/#{id}_services"
   end
-
 end
