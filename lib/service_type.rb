@@ -1,21 +1,23 @@
 require_relative './db_helper'
 
-# table schema - need to write migrations and then migrate
-if false
-  property :id, Serial
-  property :name, String
-end
-
 class ServiceType
    extend Db_helper
 
-   def initialize(attributes)
-     @id = attributes[:id]
-     @name = attributes[:name]
-   end
+  attr_reader :name
+
+  def initialize(attributes)
+    @name = attributes[:name]
+  end
+
+  def to_h
+    {
+    :name => name
+    }
+  end
 
   def save
     # needs to insert into table
+    ServiceType.dataset.insert(self.to_h)
   end
 
   def self.all
@@ -24,10 +26,6 @@ class ServiceType
 
   def self.dataset
     database.from(:service_types)
-  end
-
-  def self.first
-    dataset.first
   end
 
   def self.database
