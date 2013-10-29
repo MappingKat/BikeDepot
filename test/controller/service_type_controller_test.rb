@@ -5,7 +5,6 @@ require 'minitest/pride'
 require 'rack/test'
 require './lib/server'
 
-
 class ServerTest < Minitest::Test
   include Rack::Test::Methods
 
@@ -13,10 +12,9 @@ class ServerTest < Minitest::Test
     BikeDepot
   end
 
-  def test_get_services_page_works
-    get '/services'
-    assert last_response.ok?, "getting '/services' should work"
+  def test_service_type_page_works
+    get '/service_types'
+    assert last_response.ok?, "getting service_type should work"
   end
-
 
 end

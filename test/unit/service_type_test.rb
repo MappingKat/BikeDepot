@@ -38,9 +38,10 @@ class ServiceTypeTest < Minitest::Test
   end
 
   def test_it_does_not_update_id  #TEST NOT WORKING
-    current_id = ServiceType.all.first.id
-    ServiceType.all.first.update(:id => 80)
-    assert_equal current_id, ServiceType.all.first.id
+    service = ServiceType.all.first
+    current_id = service.id
+    service.update(:id => 80)
+    assert_equal current_id, service.id
   end  
 end
 

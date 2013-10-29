@@ -7,6 +7,11 @@ class ServiceType
   property :id, Serial
   property :name, String
 
+  def update(attributes)
+    attributes.delete(:id)
+    super
+  end
+
 end
 
 DataMapper.auto_upgrade!

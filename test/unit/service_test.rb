@@ -44,7 +44,7 @@ class ServiceTest < Minitest::Test
     assert_equal "dingle_donglers", service.name
   end
 
-  def  test_it_does_not_update_id
+  def test_it_does_not_update_id
     current_id = Service.all.first.id
     Service.all.first.update(:id => 80)
     assert_equal current_id, Service.all.first.id

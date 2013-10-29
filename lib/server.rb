@@ -12,4 +12,16 @@ class BikeDepot < Sinatra::Base
     erb :error
   end
 
+  get '/services' do
+    
+  end
+
+  get '/' do
+
+  end
+
+  get '/service_types' do 
+    
+  end
+
 end
