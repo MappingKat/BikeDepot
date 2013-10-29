@@ -1,5 +1,3 @@
-ENV['RACK_ENV'] = 'test'
-
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
@@ -11,7 +9,7 @@ class BikeDepotAuthTest < Minitest::Test
   include Rack::Test::Methods
 
   def app
-    @app ||= BikeDepot.new
+    BikeDepot
   end
 
   def test_get_login_page_works

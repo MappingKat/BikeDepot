@@ -33,12 +33,12 @@ class User
       "created_at" => Time.now.to_s
     }
   end
-
-  def load_database
-    load_services
-  end
-
-  def load_services
-    Service.filename = "db/user/#{id}_services"
-  end
 end
+
+  # def load_database
+  #   load_services
+  # end
+
+  # def load_services
+  #   Service.filename = "db/user/#{id}_services"
+  # end
