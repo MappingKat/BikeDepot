@@ -1,0 +1,25 @@
+<h1>Edit Services</h1>
+
+<% all.each do |service| %>
+
+  <form action='/service_types/edit' method='POST'>
+      <input type="hidden" name="_method" value="PUT" />
+
+      <label for="services[service_type_name]">Name:</label>
+      <textarea name='services[service_type_name]'><%= service.service_type_name %></textarea>
+
+      <label for="services[name]">Name:</label>
+      <textarea name='services[name]'><%= service.name %></textarea>
+
+      <label for="services[description]">Name:</label>
+      <textarea name='services[description]'><%= service.description %></textarea>
+
+      <label for="services[price]">Name:</label>
+      <textarea name='services[price]'><%= service.price %></textarea>
+
+      <label for="services[price_details]">Name:</label>
+      <textarea name='services[price_details]'><%= service.price_details %></textarea>
+
+  </form>
+
+<% end %>

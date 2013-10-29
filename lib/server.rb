@@ -13,7 +13,11 @@ class BikeDepot < Sinatra::Base
   end
 
   get '/services' do
-    
+    erb :services
+  end
+
+  get '/services/edit' do 
+    erb :edit_services
   end
 
   get '/' do
@@ -21,7 +25,11 @@ class BikeDepot < Sinatra::Base
   end
 
   get '/service_types' do 
-    
+    erb :service_types
+  end
+
+  get '/service_types/edit' do 
+    erb :edit_service_types
   end
 
 end
