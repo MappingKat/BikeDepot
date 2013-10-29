@@ -1,17 +1,16 @@
-require 'data_mapper'
-require_relative './db_helper'
-
 class ServiceType
-  include DataMapper::Resource
 
-  property :id, Serial
-  property :name, String
+  attr_reader :name, :id
 
-  def update(attributes)
-    attributes.delete(:id)
-    super
+  def initialize(attributes)
+    @name = attributes[:name]
+    @id = attributes[:id]
+  end
+
+  def to_h
+    {
+    :name => name
+    }
   end
 
 end
-
-DataMapper.auto_upgrade!

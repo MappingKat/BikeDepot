@@ -1,0 +1,39 @@
+<h1>Services</h1>
+
+  <% if admin? %>  
+    <ul> 
+    <% all.each do |service| %>
+      <li>
+      <%= service.service_type_name %><br/>
+      <%= service.name %><br/>
+      <%= service.description %><br/>
+      <%= service.price %><br/>
+      <%= service.price_details %><br/>
+        <form action='/services/edit' method='GET'>
+        <button type='submit' name='edit_services'>Edit Service Menu</button>
+        </form>
+      </li>
+      <%end%>
+    </ul>
+
+  <% else %>
+
+    <ul>
+      <% all.each do |service| %>
+        <li>
+        <%= service.service_type_name %><br/>
+        <%= service.name %><br/>
+        <%= service.description %><br/>
+        <%= service.price %><br/>
+        <%= service.merprice_details %><br/>
+        </li>
+      <%end%>
+    </ul>
+
+  <% end %>
+
+
+
+
+
+

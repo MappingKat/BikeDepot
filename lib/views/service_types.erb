@@ -1,0 +1,27 @@
+<h1>Service Types</h1>
+
+  <% if admin? %>  
+
+    <ul> 
+      <% all.each do |service_type| %>
+        <li>
+        <%= all.name %><br/>
+          <form action='/service_types/edit' method='GET'>
+          <button type='submit' name='edit service types'>Edit Service Type Menu</button>
+          </form>
+        </li> 
+      <% end %>
+     </ul>
+
+  <% else %>
+
+    <ul> 
+      <% all.each do |service_type| %>
+        <li>
+        <%= all.name %><br/>
+        </li>
+      <% end %>
+    </ul>
+
+  <% end %>
+

@@ -1,16 +1,29 @@
-require 'data_mapper'
-require_relative './db_helper'
-
 class Service
-  include DataMapper::Resource
 
-  property :id, Serial
-  property :service_type_id, Integer
-  property :name, String 
-  property :description, Text
-  property :price, Integer
-  property :price_details, String
+  attr_reader :id,
+              :service_type_id,
+              :name,
+              :description,
+              :price,
+              :price_details
+
+  def initialize(attributes)
+    @service_type_id = attributes[:service_type_id]
+    @name = attributes[:name]
+    @description = attributes[:description]
+    @price = attributes[:price]
+    @price_details = attributes[:price_details]
+    @id = attributes[:id]
+  end
+
+  def to_h
+    {
+    :service_type_id => service_type_id,
+    :name => name,
+    :description => description,
+    :price => price,
+    :price_details => price_details
+    }
+  end
 
 end
-
-DataMapper.auto_upgrade!
