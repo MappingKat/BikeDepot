@@ -2,11 +2,11 @@
 
 <% if false %>
 
-    <ul> 
+    <ul>
       <% service_types.each do |service_type| %>
         <li>
         <%= service_type.name %><br/>
-          <form action='/service_types/edit' method='GET'>
+        <form action='/service_types/#{service_type.id}/edit' method='GET'>
           <button type='submit' name='edit service types'>Edit Service Type Menu</button>
           </form>
         </li> 
