@@ -5,6 +5,7 @@ gem 'sinatra', require: 'sinatra/base'
 gem 'sequel'
 # will need to moved into non-prod group
 gem 'sqlite3'
+gem 'pry'
 
 # move these gems into test group
 gem 'minitest', '>=5.0.0'

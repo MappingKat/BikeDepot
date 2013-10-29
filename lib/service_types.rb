@@ -12,13 +12,18 @@ class ServiceTypes
     dataset.select.to_a.map {|data| ServiceType.new(data)}
   end
 
-  def self.update
-
+  def self.update(id,params)
+    dataset.where(:id => id).update(params)
   end
 
-  def self.find_by_name(search_term)
-    obj = all.where(:name => search_term)
-    ServiceType.new(obj.to_h)
+  def self.find_all_by_name(search_term)
+    table_data = dataset.where(:name => search_term)
+    objects = table_data.map {|d| ServiceType.new(d)}
+  end
+
+  def self.find_all_by_id(search_term)
+    table_data = dataset.where(:id => search_term)
+    objects = table_data.map {|d| ServiceType.new(d)}
   end
 
   def self.dataset
