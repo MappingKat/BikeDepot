@@ -1,5 +1,5 @@
 require 'data_mapper'
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/dev.db")
+require_relative './db_helper'
 
 class ServiceType
   include DataMapper::Resource
@@ -9,4 +9,4 @@ class ServiceType
 
 end
 
-DataMapper.auto_upgrade!  
+DataMapper.auto_upgrade!
