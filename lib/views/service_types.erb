@@ -1,11 +1,11 @@
 <h1>Service Types</h1>
 
-  <% if admin? %>  
+<% if false %>
 
     <ul> 
-      <% all.each do |service_type| %>
+      <% service_types.each do |service_type| %>
         <li>
-        <%= all.name %><br/>
+        <%= service_type.name %><br/>
           <form action='/service_types/edit' method='GET'>
           <button type='submit' name='edit service types'>Edit Service Type Menu</button>
           </form>
@@ -15,10 +15,10 @@
 
   <% else %>
 
-    <ul> 
-      <% all.each do |service_type| %>
+    <ul>
+      <% service_types.each do |service_type| %>
         <li>
-        <%= all.name %><br/>
+        <%= service_type.name %><br/>
         </li>
       <% end %>
     </ul>

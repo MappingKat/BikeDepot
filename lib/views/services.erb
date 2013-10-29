@@ -1,8 +1,8 @@
 <h1>Services</h1>
 
-  <% if admin? %>  
-    <ul> 
-    <% all.each do |service| %>
+  <% if false %>
+    <ul>
+    <% services.each do |service| %>
       <li>
       <%= service.service_type_name %><br/>
       <%= service.name %><br/>
@@ -19,7 +19,7 @@
   <% else %>
 
     <ul>
-      <% all.each do |service| %>
+      <% services.each do |service| %>
         <li>
         <%= service.service_type_name %><br/>
         <%= service.name %><br/>
