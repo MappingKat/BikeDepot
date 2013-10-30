@@ -11,4 +11,120 @@
   background-size: cover;
   } 
 
+#logo {
+  margin-top: 25px;
+  margin-top: 2px;
+  float: left; }
+    .logo a {
+      background: url(/images/logo.gif) no-repeat top left;
+     width: 172px;
+     width: 100px;
+     height: 34px;
+     text-indent: -9999px;
+     text-indent: -9px;
+     display: block; }
+/** Header **/
   
+  #header {
+    width: auto;
+ -  padding-top: 10px;
+ -  padding-left: 22px;
+ -  padding-right: 26px;
+ -  background-color: #1881C9;
+ -  min-height: 80px;
+ -  margin-bottom: -1px;
+ +  padding-top: 2px;
+ +  padding-left: 2px;
+ +  padding-right: 2px;
+ +  background-color: #FFF;
+ +  min-height: 5px;
+ +  margin-bottom: 0px;
+    overflow: auto;
+    /* background-image:url(../images/header-bg.png); */
+  }
+  
+  #logo {
+ -  margin-top: 25px;
+ +  margin-top: 2px;
+    float: left; }
+    .logo a {
+      background: url(/images/logo.gif) no-repeat top left;
+ -    width: 172px;
+ +    width: 100px;
+      height: 34px;
+ -    text-indent: -9999px;
+ +    text-indent: -9px;
+      display: block; }
+  
+  }
+  
+ -#logo a {
+ -  text-decoration: none;
+ -  color: #999899;
+ -}
+ -
+  #logo a:hover {
+    text-decoration: none;
+ -  color: #999899;
+ +  color: #3887be;
+  }
+  
+ -#logo div.sitedescription {
+ -  font-family: Helvetica, Arial, sans-serif;
+ -  font-size: 0.40em;
+ -  letter-spacing: 0;
+ -  color: #969696;
+ -  padding-left: 2px;
+ -}
+  
+  #topnav {
+ -  float: right;
+ +  width: auto;
+ +  
+    margin-top: 0px;
+    margin-right: 0px;
+    font-size: 11px;
+ @@ -349,7 +325,7 @@ hr {
+  }
+  
+  #topnav a:hover {
+ -  color: #999899;
+ +  color: #3887be;
+  } 
+  
+  #topnav h3 {
+ @@ -399,7 +375,7 @@ hr {
+    font-family: 'Oswald', sans-serif; font-weight: 400;
+    font-size: 1.4em;
+    color: #000000;
+ -  background-color: #999899;
+ +  background-color: #3887be;
+  }
+  
+  #topmenu ul { 
+ @@ -407,7 +383,7 @@ hr {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+ -  background-color: #999899;
+ +  background-color: #3887be;
+  }
+  
+  #topmenu a {
+ @@ -418,7 +394,7 @@ hr {
+    padding-left: 22px;
+    padding-right: 22px;
+    text-decoration:none;
+ -  background-color: #999899;
+ +  background-color: #3887be;
+  }
+  
+  #topmenu a:hover,
+ @@ -462,7 +438,7 @@ hr {
+  
+  #topmenu li.active ul a {
+    text-decoration: none;
+ -  background-color: #999899;
+ +  background-color: #3887be;
+    color: #000000;
+  }

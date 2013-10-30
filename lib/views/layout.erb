@@ -11,6 +11,77 @@
   <link rel="stylesheet" href="/css/base.css" type="text/css">
   <link rel="stylesheet" href="/css/menu.css" type="text/css">
 <body>
- <%= yield %>
+  <% unless request.path == "/" %>
+      <div id="wrapper">
+        <div id="templatemo_wrapper_outer">
+          <div id="header">
+            <!-- Logo -->
+ 
+            <!-- Search -->
+            <div id="search">   
+            </div>
+            <div id="topmenu">
+            <ul class="menu">
+            <!-- TopNav -->
+            <div id="logo">
+            <a href="/">
+            <img src="http://www.thebikedepot.org/templates/bikedepottemplatefallseason/images/logo.gif"  alt="bikedepot" /></a>
+            <li class="item-101 current active">
+            </div>
+            <li class="item-103 deeper parent"><a href="/contact" >Location</a>
+             <ul>
+                 <li class="item-114"><a href="/about/history" >History</a></li>
+                 <li class="item-115"><a href="/about/staff-board" >Staff &amp; Board</a></li>
+                 <li class="item-120"><a href="/about/contact" >Contact &amp; Hours</a></li>
+                 <li class="item-150"><a href="/about/privacy-policy" >Privacy Policy</a></li>
+             </ul>
+                 </li>
+                 <li class="item-106 deeper parent"><a href="/programs" >Programs</a>
+             <ul>
+                 <li class="item-133"><a href="/programs/earn-a-bike" >Earn A Bike</a></li>
+                 <li class="item-134"><a href="/programs/fix-your-bike" >Fix Your Bike</a></li>
+                 <li class="item-135"><a href="/programs/classes" >Classes</a></li>
+                 <li class="item-136"><a href="/programs/bike-camp" >Bike Camp</a></li>
+                 <li class="item-152"><a href="/programs/bike-rodeo" >Bike Rodeo</a></li>
+             </ul>
+                 </li>
+                 <li class="item-110 deeper parent"><a href="/bike-shop" >Bike Shop</a>
+             <ul>
+                 <li class="item-137"><a href="/bike-shop/retail" >Retail</a></li>
+                 <li class="item-138"><a href="/bike-shop/service" >Service Menu</a></li>
+                 <li class="item-187"><a href="/bike-shop/xtracycle" >Xtracycle </a></li>
+             </ul>
+                 </li>
+                 <li class="item-112 deeper parent"><a href="/support" >Support</a>
+ 
+             </ul>
+                 </li>
+                 <li class="item-111 deeper parent"><a href="/events" >Login</a>
+             </ul>
+             </ul>
+           </div>
+          <br clear="all" />
+  <% end %>
+  
+  <%= yield %>
+  <% unless request.path == "/" %>
+  <div class="clearboth"></div>
+      </nav><!-- #access -->
+        <div class="clearboth"></div>
+      <div id="site-copyright">
+        &#169; 2013 TheBikeDepot | All rights reserved | <a href="/privac">Terms and Conditions</a> | <a href="index.php?page_id=2687">Privacy Policy</a> | <a href="/mission" target="_blank">Mission, Vision and Values</a>
+      </div>
+      
+      <div class="social-icons">
+      <a class="sc-rss" href="http://www.colnago.com/feed" target="_blank"><span>RSS</span></a>
+      <a class="sc-twitter" href="http://www.twitter.com/colnagoworld" target="_blank"><span>Twitter</span></a>
+      <a class="sc-facebook" href="https://www.facebook.com/pages/Colnago-official-page/368678269130" target="_blank"><span>Facebook</span></a>
+      <a class="sc-video" href="http://vimeo.com/colnago" target="_blank"><span>Video</span></a>
+      </div>
+      <div class="clearboth"></div>
+      </div>
+  </footer><!-- #colophon -->
+  <div class="clearboth"></div>
+  <% end %>
 </body>
 </html>   
