@@ -30,7 +30,7 @@ class BikeDepot < Sinatra::Base
   end
 
   get '/services' do
-    erb :services, locals: {services: Services.all}
+    erb :services, locals: {services: Services.all, service_types: ServiceTypes.all}
   end
 
   post '/services' do

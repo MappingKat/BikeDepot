@@ -1,5 +1,4 @@
 <h1>Services</h1>
-<%= services %>
 
   <% if authorized? %>
 
@@ -12,6 +11,11 @@
       <textarea name='service[price]'></textarea>
       <label for="service[price_details]">price_details:</label>
       <textarea name='service[price_details]'></textarea>
+      <select name='service[service_type_id]' id='type_dropdown'>
+        <% service_types.each do |type| %>
+          <option value=<%= type.id %> name=<%= type.name %>><%=type.name %></option>
+        <% end %>
+      </select>
       <button type='submit' name='create_service'>Submit</button>
     </form>
 
