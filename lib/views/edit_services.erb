@@ -1,8 +1,8 @@
 <h1>Edit Services</h1>
 
-<% all.each do |service| %>
+<% services.each do |service| %>
 
-  <form action='/service_types/edit' method='POST'>
+  <form action='/services/edit' method='POST'>
       <input type="hidden" name="_method" value="PUT" />
 
       <label for="services[service_type_name]">Name:</label>

@@ -2,7 +2,6 @@ gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'rack/test'
-require './lib/auth'
 require './lib/server'
 
 class BikeDepotAuthTest < Minitest::Test

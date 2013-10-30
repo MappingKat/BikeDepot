@@ -43,8 +43,8 @@ class BikeDepot < Sinatra::Base
   end
 
   get '/protected' do
-  protected!
-  "Welcome, authenticated client"
+    protected!
+    "Welcome, authenticated client"
   end
 
   get '/service_types' do
@@ -104,6 +104,7 @@ class BikeDepot < Sinatra::Base
     #support/organizing-a-bike-collection-drive
     #support/memberships
     #support/wish-list
+  end
 
   get '/events' do 
     erb :events
