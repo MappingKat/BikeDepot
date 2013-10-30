@@ -1,24 +1,36 @@
 <h1>Service Types</h1>
 
-  <% if admin? %>  
+      <form action='/service_types' method='POST'>
 
-    <ul> 
-      <% all.each do |service_type| %>
+      <label for="service_type[name]">Name:</label>
+      <textarea name='service_type[name]'></textarea>
+      <button type='submit' name='create_service_type'>Submit</button>
+    </form>
+
+
+<% if authorized? %>
+    <ul>
+      <% service_types.each do |service_type| %>
         <li>
-        <%= all.name %><br/>
-          <form action='/service_types/edit' method='GET'>
-          <button type='submit' name='edit service types'>Edit Service Type Menu</button>
-          </form>
+        <%= service_type.name %><br/>
+        <form action="/service_types/<%= service_type.id %>/edit" method='GET'>
+          <button type='submit' name='edit service types'>Edit</button>
+        </form>
+
+        <form action= "/service_types/<%= service_type.id %>/delete" method='POST'>
+        <input type="hidden" name="_method" value="DELETE">
+        <input type='submit' value="delete"/>
+        </form>
         </li> 
       <% end %>
      </ul>
 
   <% else %>
-
-    <ul> 
-      <% all.each do |service_type| %>
+    <ul>
+      <% service_types.each do |service_type| %>
         <li>
-        <%= all.name %><br/>
+        <%= service_type.name %><br/>
+                <%= service_type.id %>
         </li>
       <% end %>
     </ul>
