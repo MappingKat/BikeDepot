@@ -23,14 +23,14 @@ module Db_helper
   def self.run_migrations_prod
     unless @db.table_exists?(:service_types)
       @db.run "CREATE TABLE service_types(
-        id PRIMARY KEY,
+        id INT SERIAL PRIMARY KEY,
         name TEXT
       );"
     end
 
     unless @db.table_exists?(:services)
       @db.run "CREATE TABLE services(
-       id PRIMARY KEY,
+       id INT SERIAL PRIMARY KEY,
        service_type_id INT,
        name TEXT,
        description TEXT,
