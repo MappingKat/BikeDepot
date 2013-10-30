@@ -20,21 +20,40 @@ module Db_helper
     end
   end
 
-  def self.run_migrations
-    unless @db.table_exists?(:service_types)
-      @db.run "CREATE TABLE service_types (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                             name VARCHAR(255))"
-    end
+  def self.run_migrations_prod
+    @db.run "CREATE TABLE services_types(
+      id INT PRIMARY KEY NOT NULL,
+      name TEXT
+    );"
 
-    unless @db.table_exists?(:services)
-      @db.run "CREATE TABLE services (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                      service_type_id INTEGER,
-                                      name VARCHAR(255),
-                                      description VARCHAR(255),
-                                      price INTEGER,
-                                      price_details VARCHAR(255))"
-    end
+    @db.run "CREATE TABLE services(
+     id INT PRIMARY KEY NOT NULL,
+     service_type_id INT,
+     name TEXT,
+     description TEXT,
+     price INT,
+     price_details TEXT
+    );"
   end
 
+  def self.run_migrations
+    if ENV['DATABASE_URL']
+      run_migrations_prod
+    else
+      unless @db.table_exists?(:service_types)
+        @db.run "CREATE TABLE service_types (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                               name VARCHAR(255))"
+      end
+
+      unless @db.table_exists?(:services)
+        @db.run "CREATE TABLE services (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                        service_type_id INTEGER,
+                                        name VARCHAR(255),
+                                        description VARCHAR(255),
+                                        price INTEGER,
+                                        price_details VARCHAR(255))"
+      end
+    end
+  end
 
 end
