@@ -1,4 +1,5 @@
 <h1>Services</h1>
+<%= services %>
 
   <% if false %>
     <ul>
@@ -19,13 +20,13 @@
   <% else %>
 
     <ul>
+
       <% services.each do |service| %>
         <li>
-        <%= service.service_type_name %><br/>
         <%= service.name %><br/>
         <%= service.description %><br/>
         <%= service.price %><br/>
-        <%= service.merprice_details %><br/>
+        <%= service.price_details %><br/>
         </li>
       <%end%>
     </ul>

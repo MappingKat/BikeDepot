@@ -5,13 +5,17 @@ require 'minitest/pride'
 require 'rack/test'
 require './lib/server'
 
-class ServerTest < Minitest::Test
+class ServiceTypeControllerTest < Minitest::Test
   include Rack::Test::Methods
 
     attr_reader :ser_type_id
 
   def app
     BikeDepot
+  end
+
+  def teardown
+    ServiceTypes.dataset.delete
   end
 
   def setup
@@ -26,12 +30,14 @@ class ServerTest < Minitest::Test
   end
 
   def test_service_type_edit_page_works
+    skip
     get '/service_types/' + ser_type_id.to_s + '/edit'
     assert last_response.ok?
     assert last_response.body.include?("Edit Service Types")
   end
 
   def test_it_updates_via_put
+    skip
     put '/service_types/' + ser_type_id.to_s + '/edit', :service_type => {:name => "new name"}
     assert last_response.redirect?, "route was not redirected"
     follow_redirect!
