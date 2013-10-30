@@ -4,7 +4,6 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/services'
 require './lib/service_types'
-require 'pry'
 
 class ServiceTypeServicesAssoicationsTest < Minitest::Test
 

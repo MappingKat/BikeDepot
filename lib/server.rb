@@ -2,7 +2,6 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative 'service_types'
 require_relative 'services'
-require 'pry'
 #config.ru should take care of these
 
 class BikeDepot < Sinatra::Base

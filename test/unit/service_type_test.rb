@@ -3,7 +3,6 @@ gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/service_types'
-require 'pry'
 
 class ServiceTypeTest < Minitest::Test
 
