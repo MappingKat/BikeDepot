@@ -20,23 +20,28 @@
     </form>
 
     <ul>
-    <% services.each do |service| %>
-      <li>
-      <%= service.name %><br/>
-      <%= service.description %><br/>
-      <%= service.price %><br/>
-      <%= service.price_details %><br/>
-        <form action='/services/edit' method='GET'>
-        <button type='submit' name='edit_services'>Edit Service Menu</button>
-        </form>
-      </li>
-      <%end%>
+      <% service_types.each do |type| %>
+        <li><%= type.name %>
+          <ul>
+            <% type.services.each do |service| %>
+              <li>
+                <%= service.name %><br/>
+                <%= service.description %><br/>
+                <%= service.price %><br/>
+                <%= service.price_details %><br/>
+                  <form action='/services/edit' method='GET'>
+                  <button type='submit' name='edit_services'>Edit Service Menu</button>
+                  </form>
+              </li>
+            <%end%>
+          </ul>
+        </li>
+      <% end %>
     </ul>
 
   <% else %>
 
     <ul>
-
       <% services.each do |service| %>
         <li>
         <%= service.name %><br/>
