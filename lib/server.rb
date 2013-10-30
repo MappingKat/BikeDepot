@@ -11,7 +11,7 @@ class BikeDepot < Sinatra::Base
     register Sinatra::Reloader
   end
 
-   helpers do
+  helpers do
     def protected!
       return if authorized?
       headers['WWW-Authenticate'] = 'Basic realm="Restricted Area"'
@@ -19,6 +19,7 @@ class BikeDepot < Sinatra::Base
     end
 
     def authorized?
+      return true if ENV['RACK_ENV'] == 'test'
       @auth ||=  Rack::Auth::Basic::Request.new(request.env)
       @auth.provided? and @auth.basic? and @auth.credentials and @auth.credentials == ['admin', 'admin']
     end
@@ -32,7 +33,17 @@ class BikeDepot < Sinatra::Base
     erb :services, locals: {services: Services.all}
   end
 
-  get '/services/edit' do
+  post '/services' do
+    Services.save(Service.new(params[:service]))
+    redirect '/services'
+  end
+
+  post '/service_types' do 
+    ServiceTypes.save(ServiceType.new(params[:service_type]))
+    redirect '/service_types'
+  end
+
+  get '/services/edit' do 
     erb :edit_services
   end
 
@@ -57,11 +68,6 @@ class BikeDepot < Sinatra::Base
   put '/service_types/:id/update' do |id|
     ServiceTypes.update(id,params[:service_type])
     redirect "/service_types"
-  end
-
-  post '/service_types' do 
-    ServiceTypes.save(ServiceType.new(params[:service_type]))
-    redirect '/service_types'
   end
 
   delete '/service_types/:id/delete' do |id|

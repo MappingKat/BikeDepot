@@ -34,7 +34,9 @@ class ServiceTest < Minitest::Test
 
   def test_it_deletes_a_service
     #service = Services.first.destroy
+    # binding.pry
     Services.dataset.where(:name => "wheels").delete
+    # binding.pry
     assert_equal 0, Services.all.count
   end
 
