@@ -3,6 +3,8 @@ require 'sinatra/reloader'
 require_relative 'service_types'
 require_relative 'services'
 
+#config.ru should take care of these
+
 class BikeDepot < Sinatra::Base
   set :method_override, true
   configure :development do
@@ -19,7 +21,6 @@ class BikeDepot < Sinatra::Base
     end
 
     def authorized?
-      return true if ENV['RACK_ENV'] == 'test'
       @auth ||=  Rack::Auth::Basic::Request.new(request.env)
       @auth.provided? and @auth.basic? and @auth.credentials and @auth.credentials == ['admin', 'admin']
     end
@@ -34,17 +35,11 @@ class BikeDepot < Sinatra::Base
   end
 
   get '/services' do
-    erb :services, locals: {services: Services.all, service_types: ServiceTypes.all}
+    erb :services, locals: {services: Services.all}
   end
 
-  post '/services' do
-    Services.save(Service.new(params[:service]))
-    redirect '/services'
-  end
-
-  post '/service_types' do 
-    ServiceTypes.save(ServiceType.new(params[:service_type]))
-    redirect '/service_types'
+  get '/services/edit' do 
+    erb :edit_services
   end
 
   get '/protected' do
@@ -64,6 +59,11 @@ class BikeDepot < Sinatra::Base
   put '/service_types/:id/update' do |id|
     ServiceTypes.update(id,params[:service_type])
     redirect "/service_types"
+  end
+
+  post '/service_types' do 
+    ServiceTypes.save(ServiceType.new(params[:service_type]))
+    redirect '/service_types'
   end
 
   delete '/service_types/:id/delete' do |id|
@@ -94,7 +94,7 @@ class BikeDepot < Sinatra::Base
     #programs/bike-rodeo
   end
 
-  get '/bike-shop' do 
+  get '/bike_shop' do 
     erb :bike_shop
     #bike-shop/retail
     #bike-shop/service

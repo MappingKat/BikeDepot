@@ -1,3 +1,5 @@
+<body>
+<div id="top" class="header">
 
 <h1>Service Types</h1>
 
@@ -8,7 +10,7 @@
     <textarea name='service_type[name]'></textarea>
     <button type='submit' name='create_service_type'>Submit</button>
     </form>
-   
+
     <ul>
       <% service_types.each do |service_type| %>
         <li>
@@ -20,13 +22,12 @@
         <form action= "/service_types/<%= service_type.id %>/delete" method='POST'>
         <input type="hidden" name="_method" value="DELETE">
         <input type='submit' value="delete"/>
-          </form>
+        </form>
         </li> 
       <% end %>
      </ul>
 
   <% else %>
-
     <ul>
       <% service_types.each do |service_type| %>
         <li>
@@ -36,5 +37,4 @@
       <% end %>
     </ul>
 
-  <% end %>
-
+<% end %>

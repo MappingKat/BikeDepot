@@ -25,4 +25,3 @@ class BikeDepotTest < Minitest::Test
     assert_equal "Welcome, authenticated client", last_response.body
   end
 end
-
