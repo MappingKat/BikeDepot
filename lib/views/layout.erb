@@ -8,105 +8,9 @@
   <link rel="stylesheet" href="/css/general.css" type="text/css">
   <link rel="stylesheet" href="/css/template.css" type="text/css">
   <link rel="stylesheet" href="/css/base.css" type="text/css">
-  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="/css/slider.css" type="text/css">
+
   <script type="/javascript" src="/javascript/sfhover.js"></script>
-  <!-- <link rel="stylesheet" href="/css/mediabox.css" type="text/css" />
-  <link rel="stylesheet" href="/css/mediabox_2.css" type="text/css" /> -->
-  <style type="text/css">
-  /*/* Styles for DJ Image Slider with module id 130 */
-  #djslider-loader130 {
-    margin: 0 auto;
-    position: relative;
-  }
-  #djslider130 {
-    margin: 0 auto;
-    position: relative;
-    height: 375px; 
-    width: 700px;
-    max-width: 700px;
-  }
-  #slider-container130 {
-    position: absolute;
-    overflow:hidden;
-    left: 0; 
-    top: 0;
-    height: 100%;
-    width: 100%;
-  }
-  #djslider130 ul#slider130 {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-  }
-  #djslider130 ul#slider130 li {
-    list-style: none outside !important;
-    float: left;
-    margin: 0 !important;
-    border: 0 !important;
-    padding: 0 0px 0px 0 !important;
-    position: relative;
-    height: 375px;
-    width: 700px;
-    background: none;
-    overflow: hidden;
-  }
-  #slider130 li img {
-    width: 100%;
-    height: auto;
-    border: 0 !important;
-    margin: 0 !important;
-  }
-  #slider130 li a img, #slider130 li a:hover img {
-    border: 0 !important;
-  }
-
-  /* Slide description area */
-  #slider130 .slide-desc {
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
-    width: 100%;
-  }
-  #slider130 .slide-desc-in {
-    position: relative;
-    margin: 0 0px 0px 0 !important;
-  }
-  #slider130 .slide-desc-bg {
-    position:absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  #slider130 .slide-desc-text {
-    position: relative;
-  }
-  #slider130 .slide-desc-text h3 {
-    display: block !important;
-  }
-
-  /* Navigation buttons */
-  #navigation130 {
-    position: relative;
-    top: 8%; 
-    margin: 0 5px;
-    text-align: center !important;
-  }
-
-  #prev130 {
-    cursor: pointer;
-    display: block;
-    position: absolute;
-    left: 0;
-  }
-  #next130 {
-    cursor: pointer;
-    display: block;
-    position: absolute;
-    right: 0;
-  }
-*/
-  </style>
   <script src="/javascript/mootools-core.js" type="text/javascript"></script>
   <script src="/javascript/core.js" type="text/javascript"></script>
   <script src="/javascript/caption.js" type="text/javascript"></script>
@@ -114,26 +18,11 @@
   <script src="/javascript/mootools-more.js" type="text/javascript"></script>
   <script src="/modules/mod_djimageslider/assets/powertools-1.2.0.js" type="text/javascript"></script>
   <script src="/modules/mod_djimageslider/assets/slider.js" type="text/javascript"></script>
-  <script type="text/javascript">
-  window.addEvent('load', function() {
-    new JCaption('img.caption');
-  });
-  JCEMediaObject.init('/', {
-    flash:"10,0,22,87",windowmedia:"5,1,52,701",quicktime:"6,0,2,0",realmedia:"7,0,0,0",shockwave:"8,5,1,0"});
-    JCEMediaBox.init({popup:{width:"",height:"",legacy:0,lightbox:0,shadowbox:0,resize:1,icons:1,overlay:1,overlayopacity:0.8,overlaycolor:"#000000",fadespeed:500,scalespeed:500,hideobjects:0,scrolling:"fixed",close:2,labels:{'close':'Close','next':'Next','previous':'Previous','cancel':'Cancel','numbers':'{$current} of {$total}'}},tooltip:{className:"tooltip",opacity:0.8,speed:150,position:"br",offsets:{x: 16, y: 16}},base:"/",imgpath:"plugins/system/jcemediabox/img",theme:"standard",themecustom:"",themepath:"plugins/system/jcemediabox/themes"});
-  (function($){ window.addEvent('domready',function(){this.Slider130 = new DJImageSlider({id: '130', slider_type: 2, slide_size: 700, visible_slides: 1, show_buttons: 0, show_arrows: 1, preload: 800},{auto: 1, transition: Fx.Transitions.linear, duration: 600, delay: 3600})}); })(document.id);
-  </script>
 </head> 
 
 <body>
-  <div id="wrapper">
+  <div id="templatemo_wrapper_outer">
     <div id="header">
-    <!-- Logo -->
-      <div id="logo">
-      <a href="/">
-        <img src="/images/logo.gif"  alt="bikedepot" /></a>
-      </div>
-
     <!-- Search -->
     <div id="search">   
     </div>
@@ -142,12 +31,15 @@
 <div id="topmenu">
     <ul class="menu">
     <!-- TopNav -->
-      <li class="item-101 current active">
-      <a href="/" >Home</a></li>
-      <li class="item-103 deeper parent"><a href="/about" >About</a>
+    <!-- Logo -->
+      <div id="logo">
+      <a href="/">
+        <img src="/images/logo.gif"  alt="bikedepot" /></a>
+        <li class="item-101 current active">
+      </div>
+      
+      <li class="item-103 deeper parent"><a href="/contact" >Location</a>
       <ul>
-          <li class="item-147">
-          <a href="/about/mission-vision-and-values" >Mission, Vision and Values</a></li>
           <li class="item-114"><a href="/about/history" >History</a></li>
           <li class="item-115"><a href="/about/staff-board" >Staff &amp; Board</a></li>
           <li class="item-120"><a href="/about/contact" >Contact &amp; Hours</a></li>
@@ -171,28 +63,12 @@
       </ul>
           </li>
           <li class="item-112 deeper parent"><a href="/support" >Support</a>
-      <ul>
-          <li class="item-139"><a href="/support/volunteer" >Volunteer</a></li>
-          <li class="item-140"><a href="/support/donate-bikes" >Donate Bikes</a></li>
-          <li class="item-148"><a href="/support/organizing-a-bike-collection-drive" >Organizing a Bike Collection Drive</a></li>
-          <li class="item-141"><a href="/support/memberships" >Memberships</a></li>
-          <li class="item-121"><a href="/support/wish-list" >Wish List</a></li>
+
       </ul>
           </li>
-          <li class="item-111 deeper parent"><a href="/events" >Events</a>
-      <ul>
-          <li class="item-142"><a href="/events/calendar" >Calendar</a></li>
-          <li class="item-143"><a href="/events/park-hill-family-bike-ride" >Park Hill Family Bike Ride</a></li>
+          <li class="item-111 deeper parent"><a href="/events" >Login</a>
       </ul>
-          </li>
-          <li class="item-113 deeper parent"><a href="/links" >Links</a>
-      <ul>
-          <li class="item-144"><a href="/links/business-partners" >Business Partners</a></li>
-          <li class="item-145"><a href="/links/friends" >Friends</a></li>
-          <li class="item-146"><a href="/links/we-love" >We Love...</a></li>
-        </ul>
-      </li>
-      </ul>
+    </ul>
   </div>
 <br clear="all" />
 
