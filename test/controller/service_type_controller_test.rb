@@ -30,25 +30,22 @@ class ServiceTypeControllerTest < Minitest::Test
   end
 
   def test_service_type_edit_page_works
-    skip
     get '/service_types/' + ser_type_id.to_s + '/edit'
     assert last_response.ok?
     assert last_response.body.include?("Edit Service Types")
   end
 
   def test_it_updates_via_put
-    skip
-    put '/service_types/' + ser_type_id.to_s + '/edit', :service_type => {:name => "new name"}
+    put '/service_types/' + ser_type_id.to_s + '/update', :service_type => {:name => "new name"}
     assert last_response.redirect?, "route was not redirected"
     follow_redirect!
     assert last_response.ok?, "response should be okay"
     assert last_response.body.include?("new name"), "should include new name"
-     # check here that the put route in the server file works.
   end
 
   def test_it_posts_a_new_service_type
     post '/service_types', :service_type => {:name => "oil change"}
-    follow_redirect!  
+    follow_redirect!
     assert last_response.ok?, "should work with new service type"
   end
 end
