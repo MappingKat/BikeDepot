@@ -3,17 +3,8 @@ require_relative '../helpers/acceptance_helper'
 class ServerTest < Minitest::Test
   include Capybara::DSL
 
-  def setup
-    ServiceTypes.save(:name => "Wheels")
-    @ser_type_id = ServiceTypes.find_all_by_name("Wheels").first.id
-  end
-
-  def teardown
-    ServiceTypes.dataset.delete
-  end
-
   def test_it_creates_a_new_service_type
-    visit '/service_types'
+    visit '/about'
     fill_in('service_type[name]', :with => "handle bars")
     click_button('Submit')
     assert page.has_content?('handle bars'), "page should now display handle bars"

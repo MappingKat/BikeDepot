@@ -1,14 +1,10 @@
 <h1>Service Types</h1>
-
-      <form action='/service_types' method='POST'>
-
-      <label for="service_type[name]">Name:</label>
+<% if authorized? %>
+    <form action='/service_types' method='POST'>
+      <label form="service_type[name]">Service Type:</label>
       <textarea name='service_type[name]'></textarea>
       <button type='submit' name='create_service_type'>Submit</button>
     </form>
-
-
-<% if authorized? %>
     <ul>
       <% service_types.each do |service_type| %>
         <li>
