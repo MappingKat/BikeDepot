@@ -16,8 +16,15 @@ class ServiceControllerTest < Minitest::Test
     Services.save(Service.new(:name => "Rotation"))
     get '/services'
     assert last_response.ok?, "getting '/services' should work"
-    assert last_response.include?("Rotation"), "should include Rotation"
+    assert last_response.body.include?("Rotation"), "should include Rotation"
     Services.dataset.delete
+  end
+
+  def test_it_posts_a_service
+    post '/services', :service => {:name => "fix wheel"} #need to add service_type_id
+    follow_redirect!
+    assert last_response.ok?, "should work with new service"
+    assert last_response.body.include?("fix wheel"), "should include fix wheel"
   end
 
 

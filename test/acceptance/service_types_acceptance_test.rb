@@ -1,7 +1,12 @@
 require_relative '../helpers/acceptance_helper'
 
-class ServerTest < Minitest::Test
+class ServiceTypesAcceptanceTest < Minitest::Test
   include Capybara::DSL
+  include Rack::Test::Methods
+
+  def app
+    BikeDepot
+  end
 
   def setup
     ServiceTypes.save(:name => "Wheels")
@@ -13,7 +18,6 @@ class ServerTest < Minitest::Test
   end
 
   def test_it_creates_a_new_service_type
-    skip #not working because of authentication
     visit '/service_types'
     fill_in('service_type[name]', :with => "handle bars")
     click_button('Submit')

@@ -1,11 +1,23 @@
 <h1>Services</h1>
 <%= services %>
 
-  <% if false %>
+  <% if authorized? %>
+
+    <form action='/services' method='POST'>
+      <label for="service[name]">Name:</label>
+      <textarea name='service[name]'></textarea>
+      <label for="service[description]">description:</label>
+      <textarea name='service[description]'></textarea>
+      <label for="service[price]">price:</label>
+      <textarea name='service[price]'></textarea>
+      <label for="service[price_details]">price_details:</label>
+      <textarea name='service[price_details]'></textarea>
+      <button type='submit' name='create_service'>Submit</button>
+    </form>
+
     <ul>
     <% services.each do |service| %>
       <li>
-      <%= service.service_type_name %><br/>
       <%= service.name %><br/>
       <%= service.description %><br/>
       <%= service.price %><br/>
