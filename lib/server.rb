@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+
 #config.ru should take care of these
 
 class BikeDepot < Sinatra::Base
@@ -9,7 +10,7 @@ class BikeDepot < Sinatra::Base
   end
 
   set :root, 'lib'
-  set :public_folder, 'public'
+  # set :public_folder, 'public'
 
   helpers do
   def protected!
@@ -49,7 +50,50 @@ class BikeDepot < Sinatra::Base
     erb :service_types
   end
 
-  get '/service_types/edit' do 
-    erb :edit_service_types
+  get '/about' do 
+    erb :about
+    #about/mission-vision-and-values
+    #about/history
+    #about/staff-board
+    #about/contact
+    #about/privacy-policy
+  end
+
+  get '/programs' do 
+    erb :programs
+    #programs/earn-a-bike
+    #programs/fix-your-bike
+    #programs/classes
+    #programs/bike-camp
+    #programs/bike-rodeo
+  end
+
+  get '/bike-shop' do 
+    erb :bike_shop
+    #bike-shop/retail
+    #bike-shop/service
+    #bike-shop/stracycle
+  end
+
+  get '/support' do 
+    erb :support
+    #support/volunteer
+    #support/donate-bikes
+    #support/organizing-a-bike-collection-drive
+    #support/memberships
+    #support/wish-list
+  end
+
+  get '/events' do 
+    erb :events
+    #events/calendar
+    #events/park-hill-family-bike-ride
+  end
+
+  get '/links' do 
+    erb :links
+    #links/business-partners
+    #links/friends
+    #links/we-love
   end
 end
