@@ -42,10 +42,6 @@ class BikeDepot < Sinatra::Base
     redirect '/service_types'
   end
 
-  get '/services/edit' do 
-    erb :edit_services
-  end
-
   get '/' do
     "hello!" # need a view here
   end

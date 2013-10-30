@@ -48,10 +48,4 @@ class ServerTest < Minitest::Test
     assert page.has_content?("Wheels"), "page should list Wheels type"
   end
 
-  def test_service_edit_page_works
-    skip
-    visit '/services/edit'
-    assert page.has_content?("Edit Services"), "should say edit services"
-  end
-
 end

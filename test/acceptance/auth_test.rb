@@ -3,7 +3,7 @@ require_relative '../helpers/acceptance_helper'
 class BikeDepotTest < Minitest::Test
   include Rack::Test::Methods
 
-   def app
+  def app
     BikeDepot
   end
 
