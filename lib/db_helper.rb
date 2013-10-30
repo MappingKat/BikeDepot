@@ -1,14 +1,22 @@
 module Db_helper
 
   def self.database
-    if !ENV['RACK_ENV'] == 'test'
-      @db ||= ENV['DATABASE_URL'] ? Sequel.connect(ENV['DATABASE_URL']) : Sequel.sqlite('database.sqlite3')
+    unless ENV['RACK_ENV'] == 'test'
+      @db ||= production_db_connection || Sequel.sqlite('database.sqlite3')
       run_migrations
       return @db
     else
       @db ||= Sequel.sqlite('test_database.sqlite3')
       run_migrations
       return @db
+    end
+  end
+
+  def self.production_db_connection
+    if ENV['DATABASE_URL']
+      Sequel.connect(ENV['DATABASE_URL'])
+    else
+      false
     end
   end
 
