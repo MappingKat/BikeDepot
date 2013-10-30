@@ -32,7 +32,7 @@ class BikeDepot < Sinatra::Base
     erb :services, locals: {services: Services.all}
   end
 
-  get '/services/edit' do 
+  get '/services/edit' do
     erb :edit_services
   end
 

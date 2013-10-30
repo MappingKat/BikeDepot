@@ -13,4 +13,8 @@ class ServiceType
     }
   end
 
+  def services
+    Services.find_all_by_service_type_id(id)
+  end
+
 end

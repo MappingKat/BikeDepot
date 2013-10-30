@@ -8,6 +8,11 @@ class Services
     dataset.insert(object.to_h)
   end
 
+  def self.find_all_by_service_type_id(search_term)
+    table_data = dataset.where(:service_type_id => search_term)
+    table_data.map{|d| Service.new(d)}
+  end
+
   def self.find_all_by_name(search_term)
     table_data = dataset.where(:name => search_term)
     objects = table_data.map {|d| Service.new(d)}
