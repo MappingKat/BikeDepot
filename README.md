@@ -4,7 +4,7 @@ Welcome to the Bike Depot Content Management System!  This project is a revision
 
 ![Homepage](https://raw.github.com/MappingKat/BikeDepot/master/img/Home.png)
 
-[Bike Depot]: http://www.thebikedepot.org/
+[Bike Depot]: www.thebikedepot.org
 
 
 ##Learning Goals

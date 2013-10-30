@@ -8,6 +8,9 @@ class BikeDepot < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  set :root, 'lib'
+  set :public_folder, 'public'
+
   helpers do
   def protected!
     return if authorized?
@@ -26,14 +29,13 @@ class BikeDepot < Sinatra::Base
   end
 
   get '/' do
-    "Everybody can see this page"
+    erb :index
   end
 
   get '/protected' do
     protected!
     "Welcome, authenticated client"
   end
-
 
   get '/services' do
     erb :services
