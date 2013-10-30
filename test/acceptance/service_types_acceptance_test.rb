@@ -8,6 +8,8 @@ class ServiceTypesAcceptanceTest < Minitest::Test
     BikeDepot
   end
 
+  attr_reader :ser_type_id
+
   def setup
     ServiceTypes.save(:name => "Wheels")
     @ser_type_id = ServiceTypes.find_all_by_name("Wheels").first.id
@@ -25,7 +27,6 @@ class ServiceTypesAcceptanceTest < Minitest::Test
   end
 
   def test_service_type_edit_page_works_from_other_file
-    skip
     visit '/service_types/' + ser_type_id.to_s + '/edit'
     assert page.has_content?("Edit Service Types"), "should say edit service types"
     assert page.has_content?("Wheels"), "page should have Wheels"
