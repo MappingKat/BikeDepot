@@ -40,12 +40,4 @@ class ServiceTypeTest < Minitest::Test
     assert_equal "tube installs", updated_service_type.first.name
   end
 
-  def test_it_does_not_update_id
-    skip
-    service = ServiceTypes.all.where(:id => 1)
-    current_id = service.first.id
-    service.update(:id => 80)
-    assert_equal current_id, service.id
-  end
 end
-
