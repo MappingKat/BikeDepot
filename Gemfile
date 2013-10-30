@@ -4,6 +4,10 @@ gem 'sinatra-contrib', require: 'sinatra/reloader'
 gem 'sinatra', require: 'sinatra/base'
 gem 'sequel'
 
+group :production do
+  gem 'pg'
+end
+
 group :development do
   gem 'sqlite3'
   gem 'pry'
