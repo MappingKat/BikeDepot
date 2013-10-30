@@ -27,4 +27,13 @@ class ServiceAcceptanceTest < Minitest::Test
     assert page.has_content?("25")
     assert page.has_content?("per wheel")
   end
+
+   def test_it_edits_a_service
+    skip #not finding buttton on page
+    create_service_types
+    visit '/services'
+    assert page.has_content?("per wheel"), "service page should say per wheel"
+    click_button('edit_services')
+    assert page.has_content?('Edit Services')
+  end
 end

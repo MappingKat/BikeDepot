@@ -42,6 +42,16 @@ class BikeDepot < Sinatra::Base
     redirect '/services'
   end
 
+  get '/services/:id/edit' do |id|
+    protected!
+    erb :edit_services, locals: {service: Services.find_all_by_id(id).first, service_types: ServiceTypes.all}
+  end
+
+  put '/services/:id/update' do |id|
+    Services.update(id,params[:service])
+    redirect "/services"
+  end
+
   post '/service_types' do 
     ServiceTypes.save(ServiceType.new(params[:service_type]))
     redirect '/service_types'

@@ -29,7 +29,7 @@
                 <%= service.description %><br/>
                 <%= service.price %><br/>
                 <%= service.price_details %><br/>
-                  <form action='/services/edit' method='GET'>
+                  <form action='/services/<%=service.id %>/edit' method='GET'>
                   <button type='submit' name='edit_services'>Edit Service Menu</button>
                   </form>
               </li>

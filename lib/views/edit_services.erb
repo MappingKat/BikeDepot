@@ -1,25 +1,24 @@
 <h1>Edit Services</h1>
 
-<% all.each do |service| %>
-
-  <form action='/services/edit' method='POST'>
+  <form action='/services/<%service.id%>\edit' method='POST'>
       <input type="hidden" name="_method" value="PUT" />
 
-      <label for="services[service_type_name]">Name:</label>
-      <textarea name='services[service_type_name]'><%= service.service_type_name %></textarea>
+      <label for="service[name]">Name:</label>
+      <textarea name='service[name]'><%= service.name %></textarea>
 
-      <label for="services[name]">Name:</label>
-      <textarea name='services[name]'><%= service.name %></textarea>
+      <label for="service[description]">Description:</label>
+      <textarea name='service[description]'><%= service.description %></textarea>
 
-      <label for="services[description]">Name:</label>
-      <textarea name='services[description]'><%= service.description %></textarea>
-
-      <label for="services[price]">Name:</label>
+      <label for="services[price]">Price:</label>
       <textarea name='services[price]'><%= service.price %></textarea>
 
-      <label for="services[price_details]">Name:</label>
+      <label for="services[price_details]">Price Details:</label>
       <textarea name='services[price_details]'><%= service.price_details %></textarea>
+      
+      <select name='service[service_type_id]' id='type_dropdown'>
+        <% service_types.each do |type| %>
+          <option value=<%= type.id %> name=<%= type.name %>><%=type.name %></option>
+        <% end %>
+      </select>
 
   </form>
-
-<% end %>

@@ -24,14 +24,6 @@ class ServerTest < Minitest::Test
     assert page.has_content?("Services"), "service page should say Services!"
   end
 
-  def test_services_page_works_for_admin
-    skip # TODO, update after ADMIN is ready
-    visit '/services'
-    assert page.has_content?("Services!"), "service page should say Services!"
-    click_button('edit_services')
-    asset page.has_content?('Edit Services')
-  end
-
   def test_service_type_page_works_for_guest
     skip # come back after controllers tests
     visit '/service_types'
