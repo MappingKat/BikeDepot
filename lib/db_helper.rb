@@ -21,19 +21,23 @@ module Db_helper
   end
 
   def self.run_migrations_prod
-    @db.run "CREATE TABLE services_types(
-      id INT PRIMARY KEY NOT NULL,
-      name TEXT
-    );"
+    unless @db.table_exists?(:service_types)
+      @db.run "CREATE TABLE service_types(
+        id INT PRIMARY KEY NOT NULL,
+        name TEXT
+      );"
+    end
 
-    @db.run "CREATE TABLE services(
-     id INT PRIMARY KEY NOT NULL,
-     service_type_id INT,
-     name TEXT,
-     description TEXT,
-     price INT,
-     price_details TEXT
-    );"
+    unless @db.table_exists?(:services)
+      @db.run "CREATE TABLE services(
+       id INT PRIMARY KEY NOT NULL,
+       service_type_id INT,
+       name TEXT,
+       description TEXT,
+       price INT,
+       price_details TEXT
+      );"
+    end
   end
 
   def self.run_migrations
