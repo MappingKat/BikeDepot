@@ -73,7 +73,7 @@ class BikeDepot < Sinatra::Base
   end
 
   get '/about' do 
-    erb :about {locals :}
+    erb :about 
     #about/mission-vision-and-values
     #about/history
     #about/staff-board
@@ -118,8 +118,7 @@ class BikeDepot < Sinatra::Base
 
   get '/links' do 
     erb :links
-    #links/business-partners
+    #links/partners
     #links/friends
-    #links/we-love
   end
 end
