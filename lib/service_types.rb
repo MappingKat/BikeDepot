@@ -34,4 +34,8 @@ class ServiceTypes
     Db_helper.database
   end
 
+  def self.delete(id)
+    dataset.where(:id => id.to_i).delete
+  end
+
 end

@@ -16,12 +16,6 @@ class BikeDepot < Sinatra::Base
       return if authorized?
       headers['WWW-Authenticate'] = 'Basic realm="Restricted Area"'
       halt 401, "Not authorized\n"
-      # if authorized?
-      #   return true
-      # else
-      #   headers['WWW-Authenticate'] = 'Basic realm="Restricted Area"'
-      #   halt 401, "Not authorized\n"
-      # end
     end
 
     def authorized?
@@ -56,18 +50,23 @@ class BikeDepot < Sinatra::Base
   end
 
   get '/service_types/:id/edit' do |id|
+    protected!
     erb :edit_service_types, locals: {service_type: ServiceTypes.find_all_by_id(id).first}
   end
 
   put '/service_types/:id/update' do |id|
-    # binding.pry
     ServiceTypes.update(id,params[:service_type])
-    # binding.pry
     redirect "/service_types"
   end
 
   post '/service_types' do 
     ServiceTypes.save(ServiceType.new(params[:service_type]))
+    redirect '/service_types'
+  end
+
+  delete '/service_types/:id/delete' do |id|
+    protected!
+    ServiceTypes.delete(id.to_i)
     redirect '/service_types'
   end
 

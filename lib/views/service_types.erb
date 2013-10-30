@@ -17,6 +17,11 @@
         <%= service_type.name %><br/>
         <form action="/service_types/<%= service_type.id %>/edit" method='GET'>
           <button type='submit' name='edit service types'>Edit</button>
+        </form>
+
+        <form action= "/service_types/<%= service_type.id %>/delete" method='POST'>
+        <input type="hidden" name="_method" value="DELETE">
+        <input type='submit' value="delete"/>
           </form>
         </li> 
       <% end %>
