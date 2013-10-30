@@ -11,6 +11,25 @@ class BikeDepot < Sinatra::Base
     register Sinatra::Reloader
   end
 
+   helpers do
+    def protected!
+      return if authorized?
+      headers['WWW-Authenticate'] = 'Basic realm="Restricted Area"'
+      halt 401, "Not authorized\n"
+      # if authorized?
+      #   return true
+      # else
+      #   headers['WWW-Authenticate'] = 'Basic realm="Restricted Area"'
+      #   halt 401, "Not authorized\n"
+      # end
+    end
+
+    def authorized?
+      @auth ||=  Rack::Auth::Basic::Request.new(request.env)
+      @auth.provided? and @auth.basic? and @auth.credentials and @auth.credentials == ['admin', 'admin']
+    end
+  end
+
   not_found do
     erb :error
   end
@@ -25,6 +44,11 @@ class BikeDepot < Sinatra::Base
 
   get '/' do
     "hello!" # need a view here
+  end
+
+  get '/protected' do
+  protected!
+  "Welcome, authenticated client"
   end
 
   get '/service_types' do

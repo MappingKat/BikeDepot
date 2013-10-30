@@ -16,7 +16,7 @@ class ServerTest < Minitest::Test
 
   def test_error_pages_works
     visit '/junk_url_that_does_not_exist'
-    assert page.has_content?("Oh no!"), "error page should say Oh no!"
+    assert page.has_content?("Think this page should be here?"), "error page should say Oh no!"
   end
 
   def test_services_page_works_for_guest
