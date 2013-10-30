@@ -1,5 +1,5 @@
 require_relative './db_helper'
-require 'service_type'
+require_relative './service_type'
 
 class ServiceTypes
   extend Db_helper

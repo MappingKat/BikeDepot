@@ -1,3 +1,4 @@
+require 'sequel'
 module Db_helper
 
   def self.database
