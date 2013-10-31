@@ -16,6 +16,4 @@ class ServerTest < Minitest::Test
     get '/'
     assert last_response.ok?, "getting homepage should work"
   end
-
-
 end
