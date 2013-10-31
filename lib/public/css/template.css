@@ -215,6 +215,25 @@ hr {
   font-weight:bold;
 }
 
+.services {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.service_type {
+  font-weight: bold;
+  margin-top: 20px;
+  overflow: hidden;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.service_page {
+  margin: 0 auto;
+}
+
+
 #wrapper {
   display: block;
   width: 1000px; 
