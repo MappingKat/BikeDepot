@@ -1,7 +1,5 @@
 <!DOCTYPE html >
 <html>
-<!DOCTYPE html >
-<html>
 <head>
   <title>Fast | Beautiful | Bikes</title>
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico"
@@ -10,55 +8,37 @@
   <link rel="stylesheet" href="/css/template.css" type="text/css">
   <link rel="stylesheet" href="/css/base.css" type="text/css">
   <link rel="stylesheet" href="/css/menu.css" type="text/css">
+ 
+</head>
 <body>
   <% unless request.path == "/" %>
-      <div id="wrapper">
-        <div id="templatemo_wrapper_outer">
-          <div id="header">
-            <!-- Logo -->
- 
-            <!-- Search -->
-            <div id="search">   
-            </div>
-            <div id="topmenu">
-            <ul class="menu">
-            <!-- TopNav -->
-            <div id="logo">
-            <a href="/">
-            <img src="http://www.thebikedepot.org/templates/bikedepottemplatefallseason/images/logo.gif"  alt="bikedepot" /></a>
-            <li class="item-101 current active">
-            </div>
-            <li class="item-103 deeper parent"><a href="/contact" >Location</a>
-             <ul>
-                 <li class="item-114"><a href="/about/history" >History</a></li>
-                 <li class="item-115"><a href="/about/staff-board" >Staff &amp; Board</a></li>
-                 <li class="item-120"><a href="/about/contact" >Contact &amp; Hours</a></li>
-                 <li class="item-150"><a href="/about/privacy-policy" >Privacy Policy</a></li>
-             </ul>
-                 </li>
-                 <li class="item-106 deeper parent"><a href="/programs" >Programs</a>
-             <ul>
-                 <li class="item-133"><a href="/programs/earn-a-bike" >Earn A Bike</a></li>
-                 <li class="item-134"><a href="/programs/fix-your-bike" >Fix Your Bike</a></li>
-                 <li class="item-135"><a href="/programs/classes" >Classes</a></li>
-                 <li class="item-136"><a href="/programs/bike-camp" >Bike Camp</a></li>
-                 <li class="item-152"><a href="/programs/bike-rodeo" >Bike Rodeo</a></li>
-             </ul>
-                 </li>
-                 <li class="item-110 deeper parent"><a href="/bike-shop" >Bike Shop</a>
-             <ul>
-                 <li class="item-137"><a href="/bike-shop/retail" >Retail</a></li>
-                 <li class="item-138"><a href="/bike-shop/service" >Service Menu</a></li>
-                 <li class="item-187"><a href="/bike-shop/xtracycle" >Xtracycle </a></li>
-             </ul>
-                 </li>
-                 <li class="item-112 deeper parent"><a href="/support" >Support</a>
- 
-             </ul>
-                 </li>
-                 <li class="item-111 deeper parent"><a href="/events" >Login</a>
-             </ul>
-             </ul>
+    <div id="wrapper">
+      <div id="templatemo_wrapper_outer">
+        <div id="header">
+      <!-- Navbar -->
+      <div id="topmenu">
+      <ul class="menu">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+                  <a href="/">
+                  <img src="http://www.thebikedepot.org/templates/bikedepottemplatefallseason/images/logo.gif"  alt="bikedepot" /></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li><a href="/history">About Us</a></li>
+                    <li><a href="/support">Support</a></li>
+                    <li><a href="/bike-shop">Bike Shop</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programs <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/programs">Earn A Bike</a></li>
+                    <li><a href="/earn-a-bike">Classes</a></li>
+                    <li><a href="">Bike Camp</a></li>
+                    <li><a href="#">Bike Rodeo</a></li>
+                  </ul>
+                  </ul>
+                </ul>
            </div>
           <br clear="all" />
   <% end %>

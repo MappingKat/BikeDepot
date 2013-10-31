@@ -1,39 +1,52 @@
-<h1>Services</h1>
+<html>
+<head>
+ <script src="http://localhost:9292/js/tabslideout.js"></script>  
+ <script type="text/javascript">
+    $(function(){
+      $('.slide-out-div').tabSlideOut({
+        tabHandle: '.handle',                     //class of the element that will become your tab
+        pathToTabImage: '/images/feedback_tabv2.png', //path to the image for the tab //Optionally can be set using css
+        imageHeight: '130px',                     //height of tab image           //Optionally can be set using css
+        imageWidth: '36px',                       //width of tab image            //Optionally can be set using css
+        tabLocation: 'left',                      //side of screen where tab lives, top, right, bottom, or left
+        speed: 300,                               //speed of animation
+        action: 'click',                          //options: 'click' or 'hover', action to trigger animation
+        topPos: '200px',                          //position from the top/ use if tabLocation is left or right
+        leftPos: '20px',                          //position from left/ use if tabLocation is bottom or top
+        fixedPosition: true                      //options: true makes it stick(fixed position) on scroll
+        });
+      });
+  </script>
+</head>
 
-  <% if false %>
+<body>
+  <h2> Services </h2>
+  <div class="slide-out-div" style="line-height: 1; position: fixed; height: 288px; top: 200px; left: -300px;">
+  <a class="handle" href="#" style="background-image: url(http://tutorials.jumpstartlab.com/images/feedback_tabv2.png); width: 36px; height: 130px; display: block; text-indent: -99999px; outline: none; position: absolute; top: 0px; right: -36px; background-position: initial initial; background-repeat: no-repeat no-repeat;">Feedback</a>
+  <h3>Have Feedback?</h3>
+  <p>Did you find an error? Something confusing? We'd love your help:</p>
+  <ul>
+    <li><a href="https://github.com/JumpstartLab/curriculum/blob/master/source/" id="edit_source">Edit the source code of this page directly on Github</a></li>
+    <li><a href="https://github.com/JumpstartLab/curriculum/issues">Create a new issue on the project's Github page</a></li>
+  </ul>
+  <p>Thanks!</p>
+  
+    <div class="slide-out-div open" style="line-height: 1; position: fixed; height: 309px; top: 200px; left: -3px;">
+    <a class="handle" href="#" style="background-image: url(http://tutorials.jumpstartlab.com/images/feedback_tabv2.png); width: 36px; height: 130px; display: block; text-indent: -99999px; outline: none; position: absolute; top: 0px; right: -36px; background-position: initial initial; background-repeat: no-repeat no-repeat;">Feedback</a>
+    <h3>Bike Depot News</h3>
+    <p>We have shortened our hours to . Due to nasty blizzard we have hits the slopes and will not be opening the store.  Sorry!</p>
     <ul>
-    <% services.each do |service| %>
-      <li>
-      <%= service.service_type_name %><br/>
-      <%= service.name %><br/>
-      <%= service.description %><br/>
-      <%= service.price %><br/>
-      <%= service.price_details %><br/>
-        <form action='/services/edit' method='GET'>
-        <button type='submit' name='edit_services'>Edit Service Menu</button>
-        </form>
-      </li>
-      <%end%>
+      <li><a href="https://freshymap.com">Check out the weather</a></li>
     </ul>
-
-  <% else %>
-
-    <ul>
-      <% services.each do |service| %>
-        <li>
-        <%= service.service_type_name %><br/>
-        <%= service.name %><br/>
-        <%= service.description %><br/>
-        <%= service.price %><br/>
-        <%= service.merprice_details %><br/>
-        </li>
-      <%end%>
-    </ul>
-
-  <% end %>
-
-
-
-
-
+    <p>Thanks!</p>
+  </div>
+<script>
+    $(function(){
+      var pathname = window.location.pathname.replace( ".html", ".markdown" );
+      var github_url = "https://github.com/MappingKat/BikeDepot" + pathname;
+      $("a#edit_source").attr('href', github_url);
+    });
+ </script>
+</body>
+</html>
 
