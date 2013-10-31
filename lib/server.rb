@@ -59,7 +59,7 @@ class BikeDepot < Sinatra::Base
 
   get '/protected' do
     protected!
-    "Welcome, authenticated client"
+    redirect '/'
   end
 
   get '/service_types' do
