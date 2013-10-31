@@ -1574,4 +1574,27 @@ body.contentpane {
   color: #FFFFFA;
 }
 
+.slide-out-div {
+  padding: 20px;
+  width: 250px;
+  background: #EEE;
+  border: 5px solid #FFF;
+  font-size: 90%;
+  line-height: 120%;
+}
+
+element.style {
+  background-image: url(http://tutorials.jumpstartlab.com/images/feedback_tabv2.png);
+  width: 36px;
+  height: 130px;
+  display: block;
+  text-indent: -99999px;
+  outline: none;
+  position: absolute;
+  top: 0px;
+  right: -36px;
+  background-position: initial initial;
+  background-repeat: no-repeat no-repeat; 
+}
+
 

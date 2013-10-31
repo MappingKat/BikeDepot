@@ -1,14 +1,14 @@
 <body>
 <div id="top" class="header">
 
-<h1>Service Types</h1>
-
+<h1 style="text-align: center">Service Types</h1></br>
+<div style="clear: both;">
+  <div class="col-ls-4">
 <% if authorized? %>
-
-  <form action='/service_types' method='POST'>
-    <label for="service_type[name]">Name:</label>
-    <textarea name='service_type[name]'></textarea>
-    <button type='submit' name='create_service_type'>Submit</button>
+    <form action='/service_types' method='POST'>
+      <label form="service_type[name]">Service Type:</label>
+      <textarea name='service_type[name]'></textarea></br>
+      <button type='submit' name='create_service_type'>Submit</button>
     </form>
 
     <ul>
