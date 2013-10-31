@@ -1,8 +1,8 @@
-require_relative './db_helper'
+require_relative './database_helper'
 require_relative './service'
 
 class Services
-  extend Db_helper
+  extend Database_helper
 
   def self.save(object)
     dataset.insert(object.to_h)
@@ -36,7 +36,7 @@ class Services
   end
 
   def self.database
-    Db_helper.database
+    Database_helper.database
   end
 
 end

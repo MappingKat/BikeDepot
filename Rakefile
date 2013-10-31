@@ -38,9 +38,9 @@ namespace :seeds do
 
   task :services do
     service_params = [
-      {:name => 'Basic', :service_typde_id => @tuneups, :price_details => '25'},
-      {:name => 'Standard', :service_typde_id => @tuneups, :price_details => '65'},
-      {:name => 'Premium', :service_typde_id => @tuneups, :price_details => '100'},
+      {:name => 'Basic', :service_type_id => @tuneups, :price_details => '25'},
+      {:name => 'Standard', :service_type_id => @tuneups, :price_details => '65'},
+      {:name => 'Premium', :service_type_id => @tuneups, :price_details => '100'},
       {:name => 'Trued', :service_type_id => @wheels, :price_details=> '15 base price'},
       {:name => 'Broken Spokes', :service_type_id => @wheels, :price_details=> '15'},
       {:name => 'Re-Tensioned', :service_type_id => @wheels, :price_details=> '30'},

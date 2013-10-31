@@ -1,5 +1,5 @@
 require 'sequel'
-module Db_helper
+module Database_helper
 
   def self.database
     unless ENV['RACK_ENV'] == 'test'
