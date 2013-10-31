@@ -10,13 +10,14 @@
   <link rel="stylesheet" href="/css/menu.css" type="text/css">
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
-  <script href="/js/tabslideout.js" type="text/javascript"></script>
+  <script src="/js/tabslideout.js"></script>
   
   <script type="text/javascript">
-  $(function(){
-    $('.slide-out-div').tabSlideOut({
+  $(document).ready(function(){
+    $(function(){
+      $('.slide-out-div').tabSlideOut({
         tabHandle: '.handle',                     //class of the element that will become your tab
-        pathToTabImage:'url(http://tutorials.jumpstartlab.com/images/feedback_tabv2.png)', //path to the image for the tab //Optionally can be set using css
+        pathToTabImage: 'img/go.gif', //path to the image for the tab //Optionally can be set using css
         imageHeight: '122px',                     //height of tab image           //Optionally can be set using css
         imageWidth: '40px',                       //width of tab image            //Optionally can be set using css
         tabLocation: 'left',                      //side of screen where tab lives, top, right, bottom, or left
@@ -25,20 +26,21 @@
         topPos: '200px',                          //position from the top/ use if tabLocation is left or right
         leftPos: '20px',                          //position from left/ use if tabLocation is bottom or top
         fixedPosition: false                      //options: true makes it stick(fixed position) on scroll
+      });
     });
-
   });
 
   </script>
 
-    <style type="text/css">
-    .slide-out-div {
-        padding: 20px;
-        width: 250px;
-        background: #ccc;
-        border: 1px solid #29216d;
-    }      
-    </style>
+<style type="text/css">      
+  .slide-out-div {
+      padding: 20px;
+      width: 250px;
+      background: #ccc;
+      border: 2px solid #FFF;
+      border-radius: 35px;
+  }      
+</style>
  
 </head>
 <body>
@@ -84,31 +86,23 @@
       </div>
       
       <div class="social-icons">
-      <ul class="icon-style-2 icon-size-48 clearafter">
-              <li><a href="http://www.facebook.com/kulerthemes" class="facebook" target="_blank"></a></li>
-                    <li><a href="https://twitter.com/kulerthemes" class="twitter" target="_blank"></a></li>
-                    <li><a href="https://plus.google.com/u/0/b/106590989153714574708/106590989153714574708/posts" class="google" target="_blank"></a></li>
-                    <li><a href="http://www.youtube.com/user/KulerThemes" class="youtube" target="_blank"></a></li>
-                    <li><a href="http://pinterest.com/kulerthemes/" class="pinterest" target="_blank"></a></li>
-                    <li><a href="http://feeds.feedburner.com/Kulerthemes" class="rss" target="_blank"></a></li>
-            </ul>
-      <a class="sc-rss" href="http://www.colnago.com/feed" target="_blank"><span>RSS</span></a>
-      <a class="sc-twitter" href="http://www.twitter.com/colnagoworld" target="_blank"><span>Twitter</span></a>
-      <a class="sc-facebook" href="https://www.facebook.com/pages/Colnago-official-page/368678269130" target="_blank"><span>Facebook</span></a>
-      <a class="sc-video" href="http://vimeo.com/colnago" target="_blank"><span>Video</span></a>
+      <a class="sc-twitter" href="https://twitter.com/TheBikeDepot" target="_blank"><span>Twitter</span></a>
+      <a class="sc-facebook" href="hhttps://www.facebook.com/TheBikeDepot" target="_blank"><span>Facebook</span></a>
+      <a class="sc-video" href="http://vimeo.com/bikedepot" target="_blank"><span>Video</span></a>
       </div>
       <div class="clearboth"></div>
       </div>
-  </footer><!-- #colophon -->
-  <div class="clearboth"></div>
-  <div class="slide-out-div" style="line-height: 1; position: fixed; height: 288px; top: 200px; left: -250px;">
-      <a class="handle" href="#" style="background-image: url(http://tutorials.jumpstartlab.com/images/feedback_tabv2.png); width: 36px; height: 130px; display: block; text-indent: -99999px; outline: none; position: absolute; top: 0px; right: -36px; background-position: initial initial; background-repeat: no-repeat no-repeat;">Update</a>
-      <h3>Bike Depot Update</h3>
-      <p>Sorry all!  Due to the blizzard we have hit the slopes to chew up some fresh pow-pow.  The store is closed! </p>
-      <ul>
-        <li><a href="www.freshymaps.com">Stay on top of the weather</a></li>
-      </ul>
-      <p>Thanks!</p>
+      <div class="slide-out-div">
+            <a class="handle" href="#">Content</a>
+          <h3>Bike Depot Update</h3>
+            <p>Sorry all!  Due to the blizzard we have hit the slopes to chew up some fresh pow-pow.  The store is closed! </p>
+          <ul>
+          <li><a href="http://freshymap.com/">Stay on top of the weather</a></li>
+          </ul>
+          <p>Thanks!</p>
+      </div>
+  </footer>
+  <!-- #colophon -->
   <% end %>
   
 
