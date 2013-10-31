@@ -1,5 +1,5 @@
 require_relative './db_helper'
-require 'service'
+require_relative './service'
 
 class Services
   extend Db_helper
