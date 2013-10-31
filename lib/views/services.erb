@@ -1,4 +1,5 @@
 <html>
+<div class="service_page">
 <head>
  <script src="http://localhost:9292/js/tabslideout.js"></script>  
  <script type="text/javascript">
@@ -27,11 +28,7 @@
     <form action='/services' method='POST'>
       <label for="service[name]">Name:</label>
       <textarea name='service[name]'></textarea>
-      <label for="service[description]">description:</label>
-      <textarea name='service[description]'></textarea>
-      <label for="service[price]">price:</label>
-      <textarea name='service[price]'></textarea>
-      <label for="service[price_details]">price_details:</label>
+      <label for="service[price_details]">Price and Details:</label>
       <textarea name='service[price_details]'></textarea>
       <select name='service[service_type_id]' id='type_dropdown'>
         <% service_types.each do |type| %>
@@ -41,37 +38,53 @@
       <button type='submit' name='create_service'>Submit</button>
     </form>
 
-    <ul>
-      <% service_types.each do |type| %>
-        <li><%= type.name %>
-          <ul>
-            <% type.services.each do |service| %>
-              <li>
-                <%= service.name %><br/>
-                <%= service.description %><br/>
-                <%= service.price %><br/>
-                <%= service.price_details %><br/>
-                  <form action='/services/<%=service.id %>/edit' method='GET'>
-                  <button type='submit' name='edit_services'>Edit Service Menu</button>
-                  </form>
-              </li>
-            <%end%>
-          </ul>
-        </li>
-      <% end %>
-    </ul>
+
+      <ul>
+        <% service_types.each do |type| %>
+          <div class="service_type"> 
+            <li><%= type.name %>
+              <ul>
+                <% type.services.each do |service| %>
+                  <div class="services">
+                    <li>
+                      Service: <%= service.name %><br/>
+                      Price: <%= service.price_details %><br/>
+                        <form action='/services/<%=service.id %>/edit' method='GET'>
+                        <button type='submit' name='edit_services'>Edit Service Menu</button>
+                        </form>
+                    </li>
+                  </div>
+                <%end%>
+              </ul>
+            </li>
+          </div>
+        <% end %>
+      </ul>
+  
 
   <% else %>
 
     <ul>
-      <% services.each do |service| %>
-        <li>
-        <%= service.name %><br/>
-        <%= service.description %><br/>
-        <%= service.price %><br/>
-        <%= service.price_details %><br/>
-        </li>
-      <%end%>
+        <% service_types.each do |type| %>
+          <div class="service_type"> 
+            <li><%= type.name %>
+              <ul>
+                <% type.services.each do |service| %>
+                  <div class="services">
+                    <li>
+                      Service: <%= service.name %><br/>
+                      Price: <%= service.price_details %><br/>
+                        <form action='/services/<%=service.id %>/edit' method='GET'>
+                        <button type='submit' name='edit_services'>Edit Service Menu</button>
+                        </form>
+                    </li>
+                  </div>
+                <%end%>
+              </ul>
+            </li>
+          </div>
+        <% end %>
+      </ul>
 
       <div class="slide-out-div" style="line-height: 1; position: fixed; height: 288px; top: 200px; left: -300px;">
       <div class="slide-out-div open" style="line-height: 1; position: fixed; height: 309px; top: 200px; left: -3px;">
@@ -93,5 +106,6 @@
     });
  </script>
 </body>
+</div>
 </html>
 
